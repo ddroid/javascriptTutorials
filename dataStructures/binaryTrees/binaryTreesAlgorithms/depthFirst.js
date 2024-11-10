@@ -1,3 +1,43 @@
+//! Core of Depth-First Traversal
+//* we start from root * means our current position then:
+//      a*
+//    /   \
+//   b     c
+//  / \     \
+// d   e     f
+//* then we go left child
+//      a
+//    /   \
+//   b*    c
+//  / \     \
+// d   e     f
+//* and then to childs of left child of root.
+//      a
+//    /   \
+//   b     c
+//  / \     \
+// d*  e    f
+
+//      a
+//    /   \
+//   b     c
+//  / \     \
+// d   e*    f
+//* then to c and eventually f:
+//      a
+//    /   \
+//   b     c*
+//  / \     \
+// d   e     f
+
+//      a
+//    /   \
+//   b     c
+//  / \     \
+// d   e     f*
+
+//? Resulting order should be: [a,b,d,e,c,f];
+
 //! Depth-First Traversal Approach:
 
 
