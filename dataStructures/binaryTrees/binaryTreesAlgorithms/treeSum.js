@@ -1,6 +1,7 @@
 //? Write a function, treeSum, that takes in the root of a binary tree that contains number values. The function should return the total sum of all values in the tree.
 
-//! Solution: https://structy.net/problems/tree-sum
+//? https://structy.net/problems/tree-sum
+
 
 class Node {
     constructor(val) {
@@ -10,9 +11,28 @@ class Node {
     }
 }
 
+//! Solution:1
+//* Using Depth first reversal(recursion).
+
 const treeSum = (root) => {
     if(root === null) return 0;
     return root.val + treeSum(root.left) + treeSum(root.right); 
+}
+
+//! Solution:2 
+//* Using Breadth first reversal.
+
+const treeSum2 = (root) => {
+    if(root === null) return 0;
+    let sum = 0;
+    const queue = [root];
+    while(queue.length > 0){
+        const current = queue.shift();
+        sum += current.val;
+        if(current.left !== null)queue.push(current.left);
+        if(current.right !== null)queue.push(current.right);
+    }
+    return sum;
 }
 
 const a = new Node(1);
@@ -40,4 +60,5 @@ f.right = h;
 //    /       \
 //   2         2
 
-console.log(treeSum(a)); // -> 10
+console.log("solution 1: " + treeSum(a)); // -> 10
+console.log("solution 2: " + treeSum2(a)); // -> 10
