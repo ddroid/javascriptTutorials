@@ -10,7 +10,7 @@ class Node {
     }
 }
 
-//! Solution:1
+//! Solution:1a
 //* Using Depth first reversal.
 
 const treeMinValue = (root) => {
@@ -25,11 +25,20 @@ const treeMinValue = (root) => {
     }
     return smallest;
 };
+//! Solution:1b
+//* Using Depth first reversal(recursive).
+
+const treeMinValue2 = (root) => {
+    if(root === null) return Infinity;
+    const leftMin = treeMinValue(root.left);
+    const rightMin = treeMinValue(root.right);
+    return Math.min(root.val, leftMin, rightMin);
+};
 
 //! Solution:2 
 //* Using Breadth first reversal.
 
-const treeMinValue2 = (root) => {
+const treeMinValue3 = (root) => {
     const queue = [root];
     let smallest = Infinity;
     while(queue.length > 0){
@@ -69,3 +78,4 @@ f.right = h;
 
 console.log(treeMinValue(a)); // -> -13
 console.log(treeMinValue2(a)); // -> -13
+console.log(treeMinValue3(a)); // -> -13
