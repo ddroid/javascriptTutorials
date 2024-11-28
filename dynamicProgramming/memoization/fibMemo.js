@@ -39,10 +39,10 @@ const fibMemo = (n, memo = {}) => {
 //*              5
 //*            /   \
 //*           4     3
-//*         /   \    |
-//*        3     2   (memoized result for fibonacci(3))
-//*       / \   |
-//*      2   1  (memoized result for fibonacci(2))
+//*         /   \   |
+//*        3     2  (memoized result for fibonacci(3))
+//*       / \    |
+//*      2   1   (memoized result for fibonacci(2))
 //*     /
 //*    1
 
