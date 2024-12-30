@@ -9,3 +9,5 @@
 //? Block Scope: A block is any part of JavaScript code bounded by ’{}’. Variables declared within a block can not be accessed outside that block. This Scope is only provided by the let and const keywords. If you declare a variable within a block using the var keyword, it will NOT have Block Scope.
 
 //? Local Scope: Local variables are only recognized inside their functions, variables with the same name can be used in different functions. Local variables are created when a function starts, and deleted when the function is completed. var, let and const all provide this Scope.
+
+//? you can declare a local variable with the same name as a global variable. When you do this, the local variable will shadow the global variable within its scope. This means that within the local scope (e.g., inside a function or block), the local variable will be used, and the global variable will be inaccessible.
