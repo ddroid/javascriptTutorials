@@ -11,3 +11,17 @@
 //? Local Scope: Local variables are only recognized inside their functions, variables with the same name can be used in different functions. Local variables are created when a function starts, and deleted when the function is completed. var, let and const all provide this Scope.
 
 //? you can declare a local variable with the same name as a global variable. When you do this, the local variable will shadow the global variable within its scope. This means that within the local scope (e.g., inside a function or block), the local variable will be used, and the global variable will be inaccessible.
+
+// Global variable
+let globalVar = "Global";
+
+const myArrowFunction = () => {
+    // Local variable
+    let localVar = "Local";
+    console.log(localVar); // Outputs: "Local"
+    console.log(globalVar); // Outputs: "Global"
+};
+
+myArrowFunction();
+//! console.log(localVar); 
+// ReferenceError: localVar is not defined
