@@ -5,7 +5,7 @@ class Tiles{
         this.name = name;
         this.size = sizeInMeters;
         this.color = color;
-        this.price = pricePerMeterSquare;
+        this.price = pricePerMeterSquare; 
     }
 
     displayTiles(){
